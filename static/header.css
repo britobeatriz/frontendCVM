@@ -1,0 +1,12 @@
+@import url('global.css');
+
+.chat-header {
+    background-color: #466e98;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
