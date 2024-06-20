@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat LLM</title>
+    <link rel="stylesheet" href="../static/global.css">
+</head>
+
+<body>
+
+    <aside id="aside">
+        <div id="aside-container">
+            <div id="aside-header">
+                <input type="checkbox" id="aside-toggle" hidden onclick="toggleAside()">                
+            </div>
+            <div>
+                aside aqui
+            </div>
+    </aside>
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+            <label for="aside-toggle" class="aside-toggle">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 40 40">
+                        <path fill="#dff0fe" d="M1.5 17.5H38.5V22.5H1.5z"></path>
+                        <path fill="#4788c7" d="M38,18v4H2v-4H38 M39,17H1v6h38V17L39,17z"></path>
+                        <path fill="#dff0fe" d="M1.5 7.5H38.5V12.5H1.5z"></path>
+                        <path fill="#4788c7" d="M38,8v4H2V8H38 M39,7H1v6h38V7L39,7z"></path>
+                        <g>
+                            <path fill="#dff0fe" d="M1.5 27.5H38.5V32.5H1.5z"></path>
+                            <path fill="#4788c7" d="M38,28v4H2v-4H38 M39,27H1v6h38V27L39,27z"></path>
+                        </g>
+                    </svg>
+                </span>
+            </label>
+
+            <h1>logo</h1>
+            <span></span>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message user">teste pergunta</div>
+            <div class="message bot">teste resposta</div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem..." />
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+<script>
+function toggleAside() {
+    var status = document.getElementById('aside-toggle').checked;
+    var aside = document.getElementById('aside');
+
+    if (status === true) {
+        aside.style.width = '0vw';
+        setTimeout(function() {
+        aside.hidden = true;
+    }, 300); // Ajuste o tempo para coincidir com a transição CSS
+    } else {
+        aside.hidden = false;
+        setTimeout(function() {
+        aside.style.width = '20vw';
+        }, 10); // Pequeno delay para permitir que a transição funcione
+    }
+}
+</script>
+</body>
+</html>
