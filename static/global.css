@@ -83,14 +83,6 @@ body, html {
 .chat-input button:hover {
   background-color: #0056b3;
 }
-
-@media (max-width: 600px) {
-  .chat-container {
-    height: 100%;
-    border-radius: 0;
-  }
-}
-
 /* aside */
 
 #aside {

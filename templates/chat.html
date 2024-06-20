@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat LLM</title>
     <link rel="stylesheet" href="../static/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
     <aside id="aside">
         <div id="aside-container">
             <div id="aside-header">
@@ -21,19 +21,12 @@
     </aside>
 
     <div class="chat-container">
-
         <div class="chat-header">
             <label for="aside-toggle" class="aside-toggle">
                 <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 40 40">
-                        <path fill="#dff0fe" d="M1.5 17.5H38.5V22.5H1.5z"></path>
-                        <path fill="#4788c7" d="M38,18v4H2v-4H38 M39,17H1v6h38V17L39,17z"></path>
-                        <path fill="#dff0fe" d="M1.5 7.5H38.5V12.5H1.5z"></path>
-                        <path fill="#4788c7" d="M38,8v4H2V8H38 M39,7H1v6h38V7L39,7z"></path>
-                        <g>
-                            <path fill="#dff0fe" d="M1.5 27.5H38.5V32.5H1.5z"></path>
-                            <path fill="#4788c7" d="M38,28v4H2v-4H38 M39,27H1v6h38V27L39,27z"></path>
-                        </g>
+                    <svg width="25" height="25" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M85 16H42C27.0883 16 15 28.0883 15 43V86C15 100.912 27.0883 113 42 113H85C99.9117 113 112 100.912 112 86V43C112 28.0883 99.9117 16 85 16Z" stroke="white" stroke-width="7"/>
+                        <path d="M46 17V112" stroke="white" stroke-width="7" stroke-linecap="round"/>
                     </svg>
                 </span>
             </label>
@@ -43,14 +36,24 @@
         </div>
 
         <div class="chat-messages" id="chat-messages">
-            <div class="message user">teste pergunta</div>
-            <div class="message bot">teste resposta</div>
+            <div class="message user">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is 
+                that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
+            <div class="message bot">Vestibulum mattis nulla nec pharetra tempus. Nam malesuada ut ipsum vel placerat. Donec ut tellus placerat, pretium sem nec, condimentum leo. Nam in porttitor ipsum. Suspendisse sagittis dui a quam suscipit euismod. Mauris elit massa, iaculis in sodales quis, pharetra sit amet odio. Nullam lobortis est sed urna vestibulum, vel congue eros iaculis. Aenean nec finibus mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras finibus magna nisi, et viverra nibh bibendum a. Integer hendrerit luctus diam, vel egestas neque. Duis finibus sagittis nisl,
+                 eu luctus odio. Nam imperdiet consectetur justo, et interdum dui tincidunt eu. Praesent semper rutrum nibh.</div>
+            <!-- {% for question in listQuestion %} -->
+            <!-- <div class="message user">{{ question['question'] }}</div> -->
+                <!-- {% for answer in listAnswer if answer['question_id'] == question['id'] %} -->
+                <!-- <div class="message bot">{{ answer['answer'] }}</div> -->
+                <!-- {% endfor %}
+            {% endfor %} -->
         </div>
 
-        <div class="chat-input">
-            <input type="text" id="chat-input" placeholder="Digite sua mensagem..." />
-            <button id="send-button">Enviar</button>
-        </div>
+        <form action="/chat", method="post">
+            <div class="chat-input">
+                <input type="text" id="chat-input" name="chat-input" placeholder="Digite sua mensagem..." />
+                <button id="send-button">Enviar</button>
+            </div>
+        </form>
     </div>
 
 <script>
