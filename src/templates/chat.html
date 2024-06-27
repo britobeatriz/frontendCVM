@@ -19,8 +19,19 @@
                 <input type="checkbox" id="aside-toggle" hidden onclick="toggleAside()">                
             </div>
             <div>
-                aside aqui
+                Histórico
             </div>
+            <div>
+                <ul>
+                    <!-- {% for question in listQuestion %} 
+                        <li>{{ question['question'] }}</li>
+                    {% endfor %} -->
+                    <li>teste</li>
+                    <li>teste</li>
+                    <li>teste</li>
+                </ul>
+            </div>
+        </div>
     </aside>
 
     <div class="chat-container">
@@ -43,11 +54,11 @@
                 that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
             <div class="card message bot">Vestibulum mattis nulla nec pharetra tempus. Nam malesuada ut ipsum vel placerat. Donec ut tellus placerat, pretium sem nec, condimentum leo. Nam in porttitor ipsum. Suspendisse sagittis dui a quam suscipit euismod. Mauris elit massa, iaculis in sodales quis, pharetra sit amet odio. Nullam lobortis est sed urna vestibulum, vel congue eros iaculis. Aenean nec finibus mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras finibus magna nisi, et viverra nibh bibendum a. Integer hendrerit luctus diam, vel egestas neque. Duis finibus sagittis nisl,
                  eu luctus odio. Nam imperdiet consectetur justo, et interdum dui tincidunt eu. Praesent semper rutrum nibh.</div>
-            <!-- {% for question in listQuestion %} -->
-            <!-- <div class="message user">{{ question['question'] }}</div> -->
-                <!-- {% for answer in listAnswer if answer['question_id'] == question['id'] %} -->
-                <!-- <div class="message bot">{{ answer['answer'] }}</div> -->
-                <!-- {% endfor %}
+            <!-- {% for question in listQuestion %} 
+            <div class="message user">{{ question['question'] }}</div>
+                {% for answer in listAnswer if answer['question_id'] == question['id'] %}
+                    <div class="message bot">{{ answer['answer'] }}</div>
+                {% endfor %}
             {% endfor %} -->
         </div>
 
@@ -59,23 +70,23 @@
         </form>
     </div>
 
-<script>
-function toggleAside() {
-    var status = document.getElementById('aside-toggle').checked;
-    var aside = document.getElementById('aside');
+    <script>
+        function toggleAside() {
+            var status = document.getElementById('aside-toggle').checked;
+            var aside = document.getElementById('aside');
 
-    if (status === true) {
-        aside.style.width = '0vw';
-        setTimeout(function() {
-        aside.hidden = true;
-    }, 300); // Ajuste o tempo para coincidir com a transição CSS
-    } else {
-        aside.hidden = false;
-        setTimeout(function() {
-        aside.style.width = '20vw';
-        }, 10); // Pequeno delay para permitir que a transição funcione
-    }
-}
-</script>
+            if (status === true) {
+                aside.style.width = '0vw';
+                setTimeout(function() {
+                aside.hidden = true;
+            }, 300); // Ajuste o tempo para coincidir com a transição CSS
+            } else {
+                aside.hidden = false;
+                setTimeout(function() {
+                aside.style.width = '25vw';
+                }, 10); // Pequeno delay para permitir que a transição funcione
+            }
+        }
+    </script>
 </body>
 </html>
